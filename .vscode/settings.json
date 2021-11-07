@@ -3,14 +3,14 @@
 "workbench.iconTheme": "vscode-icons",
 "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
 "terminal.integrated.fontFamily": "'Operator Mono', 'Inconsolata for Powerline', monospace",
-"editor.fontSize": 17,
+"editor.fontSize": 14,
 "editor.lineHeight": 24.65,
-"editor.letterSpacing": 0.5,
-"editor.fontWeight": "400",
+"editor.letterSpacing": 0.7,
+"editor.fontWeight": "300",
 "editor.fontLigatures": true,
-"editor.cursorStyle": "line",
+"editor.cursorStyle": "line-thin",
 "editor.cursorWidth": 5,
-"editor.cursorBlinking": "solid",
+"editor.cursorBlinking":"smooth",
 "editor.renderWhitespace": "all",
 "editor.snippetSuggestions": "top",
 "workbench.startupEditor": "newUntitledFile",
@@ -41,4 +41,5 @@
 // SOP's Import Cost Extension Settings.
 "importCost.largePackageColor": "#EC3A37F5",
 "importCost.mediumPackageColor": "#B362FF",
-"importCost.smallPackageColor": "#B362FF"}
+"importCost.smallPackageColor": "#B362FF",
+}

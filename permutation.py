@@ -1,12 +1,13 @@
 class Permutation:
-    def __init__(self, cycle_notation):
-        self.transformation_dict = {cycle_notation[i]: cycle_notation[(i + 1) % len(cycle_notation)] for i in range(len(cycle_notation))}
-        self.n = max(cycle_notation)
+    def __init__(self, transformation_dict):
+        self.transformation_dict = transformation_dict
+        self.n = max(transformation_dict.keys())
 
     @classmethod
-    def from_dict(cls, dict):
-        tuple_rep = (dict[i] for i in range())
-        return cls
+    def from_tuple(cls, cycle):
+        transformation_dict = {cycle[i]: cycle[(
+            i + 1) % len(cycle)] for i in range(len(cycle))}
+        return cls(transformation_dict)
 
     def __rmul__(self, second_permutation):
         """right multiplies"""
@@ -22,10 +23,10 @@ class Permutation:
     def __mul__(self, other):
         return other.__rmul__(self)
 
-    def __call__(self, other):
-        return other.__rmul__(self)
+    def __call__(self, num):
+        if num in self.transformation_dict:
+            return self.transformation_dict[num]
+        return num
 
-sigma = Permutation((1, 2, 3, 4))
-sigma2 = Permutation((4, 3, 2, 1))
-print(sigma * sigma2)
-print(Permutation)
+sigma = Permutation.from_tuple((1, 2, 3, 4))
+print(sigma(1)) # applies the cycle to 1

@@ -10,7 +10,7 @@ def find_units_of_z_n(n):
 
 def find_order_of_x_in_z_n(x, n):
     for p in range(1, n + 1):
-        if x ** p % n == 1:
+        if x**p % n == 1:
             return p
 
 

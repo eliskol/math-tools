@@ -330,3 +330,13 @@ class Matrix:
             for j in range(0, num_cols):
                 random_matrix_rows[i].append(random.randint(min_value, max_value))
         return cls(random_matrix_rows)
+
+    def export_latex(self):
+        beginning = "\\begin{bmatrix}"
+        end = "\\end{bmatrix}"
+        middle = ""
+        for row in self.rows:
+            for col_index in range(self.num_cols-1):
+                middle += str(row[col_index])+"&"
+            middle += f"{row[self.num_cols-1]}\\\\"
+        return beginning + middle + end
